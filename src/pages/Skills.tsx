@@ -2,7 +2,7 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Progress } from "@/components/ui/progress";
 import { Badge } from "@/components/ui/badge";
-import { Code, Globe, Tool, Database } from "lucide-react";
+import { Code, Globe, Wrench, Database } from "lucide-react";
 
 const Skills = () => {
   const skillCategories = [
@@ -30,7 +30,7 @@ const Skills = () => {
     },
     {
       title: "Tools & Platforms",
-      icon: Tool,
+      icon: Wrench,
       color: "from-teal-500 to-green-500",
       skills: [
         { name: "GitHub", level: 90 },
