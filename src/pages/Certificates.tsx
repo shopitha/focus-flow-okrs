@@ -11,42 +11,48 @@ const Certificates = () => {
       issuer: "MongoDB",
       category: "Database",
       color: "from-green-500 to-emerald-500",
-      status: "Completed"
+      status: "Completed",
+      certificateUrl: "https://university.mongodb.com/course_completion/your-certificate-id" // Replace with actual certificate URL
     },
     {
       title: "Front-End Development",
       issuer: "Coursera",
       category: "Web Development",
       color: "from-blue-500 to-indigo-500",
-      status: "Completed"
+      status: "Completed",
+      certificateUrl: "https://coursera.org/share/your-certificate-id" // Replace with actual certificate URL
     },
     {
       title: "Postman API Fundamentals",
       issuer: "Postman Student Expert",
       category: "API Testing",
       color: "from-orange-500 to-red-500",
-      status: "Completed"
+      status: "Completed",
+      certificateUrl: "https://badgr.com/public/assertions/your-badge-id" // Replace with actual certificate URL
     },
     {
       title: "Power BI",
       issuer: "Forage",
       category: "Data Analytics",
       color: "from-yellow-500 to-orange-500",
-      status: "Completed"
+      status: "Completed",
+      certificateUrl: "https://forage-uploads-prod.s3.amazonaws.com/completion-certificates/your-certificate.pdf" // Replace with actual certificate URL
     },
     {
       title: "Introduction to Cloud Computing",
       issuer: "Coursera",
       category: "Cloud Computing",
       color: "from-purple-500 to-pink-500",
-      status: "Completed"
+      status: "Completed",
+      certificateUrl: "https://coursera.org/share/your-certificate-id" // Replace with actual certificate URL
     },
     {
       title: "SQL (Basic)",
       issuer: "HackerRank",
       category: "Database",
       color: "from-teal-500 to-cyan-500",
-      status: "Completed"
+      status: "Completed",
+      certificateUrl: "https://www.hackerrank.com/certificates/your-certificate-id" // Replace with actual certificate URL
     }
   ];
 
@@ -56,6 +62,10 @@ const Certificates = () => {
     "API Testing": "bg-orange-100 text-orange-700",
     "Data Analytics": "bg-yellow-100 text-yellow-700",
     "Cloud Computing": "bg-purple-100 text-purple-700"
+  };
+
+  const handleViewCertificate = (certificateUrl: string) => {
+    window.open(certificateUrl, '_blank');
   };
 
   return (
@@ -125,6 +135,7 @@ const Certificates = () => {
                   variant="outline" 
                   size="sm" 
                   className="w-full flex items-center justify-center gap-2 hover:bg-purple-50"
+                  onClick={() => handleViewCertificate(cert.certificateUrl)}
                 >
                   <ExternalLink size={16} />
                   View Certificate
@@ -134,7 +145,7 @@ const Certificates = () => {
           ))}
         </div>
 
-        {/* Skills Validation */}
+        {/* Skill Validation */}
         <Card className="mt-12 bg-gradient-to-r from-purple-50 to-teal-50 border-purple-200 animate-fade-in">
           <CardContent className="p-8">
             <h3 className="text-2xl font-bold text-gray-800 mb-6 text-center">

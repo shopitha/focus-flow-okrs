@@ -16,7 +16,9 @@ const Projects = () => {
         "Order customization and tracking system",
         "Integrated chatbot for user support"
       ],
-      category: "Web Development"
+      category: "Web Development",
+      githubUrl: "https://github.com/shopitha/food-delivery-website", // Replace with actual repo URL
+      demoUrl: "https://shopitha-food-delivery.netlify.app" // Replace with actual demo URL
     },
     {
       title: "Plant Disease Detection",
@@ -28,7 +30,9 @@ const Projects = () => {
         "Advanced preprocessing for accurate classification",
         "Real-time disease detection and recommendations"
       ],
-      category: "Machine Learning"
+      category: "Machine Learning",
+      githubUrl: "https://github.com/shopitha/plant-disease-detection", // Replace with actual repo URL
+      demoUrl: "https://plant-disease-detector.herokuapp.com" // Replace with actual demo URL
     },
     {
       title: "Power BI Dashboards",
@@ -40,7 +44,9 @@ const Projects = () => {
         "PhoneNow Churn Dashboard – Churn analysis and retention indicators",
         "Diversity & Inclusion Report – Gender, age, department representation"
       ],
-      category: "Data Analytics"
+      category: "Data Analytics",
+      githubUrl: "https://github.com/shopitha/powerbi-dashboards", // Replace with actual repo URL
+      demoUrl: "https://app.powerbi.com/view?r=your-dashboard-id" // Replace with actual demo URL
     },
     {
       title: "Sentiment Analysis",
@@ -52,9 +58,23 @@ const Projects = () => {
         "Optimized model for scalable performance",
         "Web-based interface for easy interaction"
       ],
-      category: "AI/ML"
+      category: "AI/ML",
+      githubUrl: "https://github.com/shopitha/sentiment-analysis", // Replace with actual repo URL
+      demoUrl: "https://sentiment-analyzer-flask.herokuapp.com" // Replace with actual demo URL
     }
   ];
+
+  const handleGithubClick = (githubUrl: string) => {
+    window.open(githubUrl, '_blank');
+  };
+
+  const handleDemoClick = (demoUrl: string) => {
+    window.open(demoUrl, '_blank');
+  };
+
+  const handleViewAllGithub = () => {
+    window.open('https://github.com/shopitha', '_blank'); // Replace with your actual GitHub profile
+  };
 
   return (
     <div className="min-h-screen py-12 px-4">
@@ -131,6 +151,7 @@ const Projects = () => {
                       variant="outline" 
                       size="sm" 
                       className="flex items-center gap-2 hover:bg-gray-50"
+                      onClick={() => handleGithubClick(project.githubUrl)}
                     >
                       <Github size={16} />
                       Code
@@ -139,6 +160,7 @@ const Projects = () => {
                       variant="outline" 
                       size="sm" 
                       className="flex items-center gap-2 hover:bg-blue-50"
+                      onClick={() => handleDemoClick(project.demoUrl)}
                     >
                       <ExternalLink size={16} />
                       Demo
@@ -191,6 +213,7 @@ const Projects = () => {
             <div className="flex flex-wrap justify-center gap-4">
               <Button 
                 className="bg-gradient-to-r from-purple-500 to-teal-500 hover:from-purple-600 hover:to-teal-600 text-white"
+                onClick={handleViewAllGithub}
               >
                 <Github className="mr-2" size={20} />
                 View All on GitHub
